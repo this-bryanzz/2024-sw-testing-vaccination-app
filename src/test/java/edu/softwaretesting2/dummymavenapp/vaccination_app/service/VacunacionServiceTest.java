@@ -25,14 +25,10 @@ class VacunacionServiceTest {
     @Test
     public void deberíaAsignarMaximo40PersonasParaUnDía(){
         //GIVEN
-        Assertions.assertEquals("NN", persona1.getNombre());
-        Assertions.assertTrue(persona1.getNombre().equals("NN"));
 
-    }
+        //WHEN
 
-    @Test
-    void dummyTest(){
-        persona1.setNombre("Bla");
+        //THEN
 
     }
 }
