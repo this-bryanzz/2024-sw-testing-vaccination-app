@@ -1,16 +1,21 @@
 package edu.softwaretesting2.dummymavenapp.vaccination_app.service;
 
-import edu.softwaretesting2.dummymavenapp.vaccination_app.model.Paciente;
-import org.junit.jupiter.api.*;
-
-import javax.lang.model.util.AbstractAnnotationValueVisitor6;
 import java.time.LocalDate;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
+import edu.softwaretesting2.dummymavenapp.vaccination_app.model.Paciente;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class VacunacionServiceTest {
 
     Paciente persona1;
     Paciente personaPrioritaria;
+    boolean respuesta;
 
     @BeforeAll
     void init(){
@@ -39,9 +44,10 @@ class VacunacionServiceTest {
         VacunacionService servicio = new VacunacionService();
 
         //WHEN
-        boolean respuesta = servicio.validarLaEdadDelPaciente(personaPrioritaria);
+        respuesta = servicio.validarLaEdadDelPaciente(personaPrioritaria);
 
         //THEN
         Assertions.assertTrue(respuesta);
+
     }
 }
